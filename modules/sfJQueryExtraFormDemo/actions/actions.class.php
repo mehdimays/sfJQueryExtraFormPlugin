@@ -3,7 +3,6 @@ class sfJQueryExtraFormDemoActions extends sfActions
 {
   public function executeIndex(sfwebRequest $request)
   {
-    
   }
   
   public function executeAutocomplete(sfwebRequest $request)
@@ -11,6 +10,11 @@ class sfJQueryExtraFormDemoActions extends sfActions
     $this->form = new sfJQueryExtraDemoAutoCompleteForm();
   }
   
+  public function executeHtml5(sfwebRequest $request)
+  {
+    $this->form = new sfJQueryExtraDemoHtml5Form();
+  }
+
   public function executeRemoteAutocomplete(sfwebRequest $request)
   {
     $this->forward404Unless($request->isXmlHttpRequest());
