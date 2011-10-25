@@ -4,22 +4,22 @@ class sfJQueryExtraDemoDatepickerForm extends sfJQueryExtraBaseForm
 {
   public function configure()
   {
-    $this->setWidget('intl',new sfWidgetExtraWidgetDate(array(
+    $this->setWidget('intl',new sfJQueryExtraWidgetDate(array(
         'culture' => '',
     )));
     $this->setValidator('intl', new sfValidatorDate());
 
-    $this->setWidget('fr',new sfWidgetExtraWidgetDate(array(
+    $this->setWidget('fr',new sfJQueryExtraWidgetDate(array(
         'culture' => 'fr',
     )));
     $this->setValidator('fr', new sfValidatorDate());
 
-    $this->setWidget('ar',new sfWidgetExtraWidgetDate(array(
+    $this->setWidget('ar',new sfJQueryExtraWidgetDate(array(
         'culture' => 'ar',
     )));
     $this->setValidator('ar', new sfValidatorDate());
 
-    $this->setWidget('with_max_date',new sfWidgetExtraWidgetDate(array(
+    $this->setWidget('with_max_date',new sfJQueryExtraWidgetDate(array(
         'culture' => 'uk',
         'datepicker' => array(
           'maxDate' => '+1d',

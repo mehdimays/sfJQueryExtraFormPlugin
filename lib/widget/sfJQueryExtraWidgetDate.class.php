@@ -1,14 +1,14 @@
 <?php
 
 /**
- * sfWidgetExtraWidgetDate represents a date widget with jQuery UI datepicker.
+ * sfJQueryExtraWidgetDate represents a date widget with jQuery UI datepicker.
  *
  * @package    sfJQueryExtraFormPlugin
  * @subpackage widget
  * @author     Sensio Labs
  * @version    
  */
-class sfWidgetExtraWidgetDate extends sfWidgetFormI18nDate
+class sfJQueryExtraWidgetDate extends sfWidgetFormI18nDate
 {
 
   /**
