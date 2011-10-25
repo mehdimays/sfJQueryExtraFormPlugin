@@ -5,24 +5,39 @@ class sfJQueryExtraWidgetInputText extends sfWidgetFormInputText
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-    $this->addOption('source', array());
+
+    $this->addOption('autocomplete', null);
+
   }
 
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $attributes = array_merge(array(
-      'data-sfautocomplete' => json_encode(array(
-        'source' => $this->getOption('source')
-      ))
-    ), $attributes);
-    
+    $autocomplete = $this->getOption('autocomplete');
+    if (null !== $autocomplete)
+    {
+      if (!isset ($autocomplete['source']) || empty ($autocomplete['source']))
+      {
+        throw new InvalidArgumentException('autocomplete option need a source parameter');
+      }
+
+      $attributes = array_merge(array(
+        'data-sfautocomplete' => json_encode($autocomplete)
+      ), $attributes);
+    }
+
     return parent::render($name, $value, $attributes, $errors);
   }
-  
+
   public function getJavascripts()
   {
-    return array_merge(array(
-      '/sfJQueryExtraFormPlugin/js/bootstrap.autocomplete.js',
-    ), parent::getJavascripts());
+    $js = array();
+
+    $autocomplete = $this->getOption('autocomplete');
+    if (null !== $autocomplete)
+    {
+      $js[] = '/sfJQueryExtraFormPlugin/js/bootstrap.autocomplete.js';
+    }
+
+    return array_merge($js, parent::getJavascripts());
   }
 }
