@@ -1,6 +1,6 @@
 <?php
 
-class sfJQueryExtraDemoDatepickerForm extends BaseForm
+class sfJQueryExtraDemoDatepickerForm extends sfJQueryExtraBaseForm
 {
   public function configure()
   {
