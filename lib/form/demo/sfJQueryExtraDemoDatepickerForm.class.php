@@ -7,17 +7,23 @@ class sfJQueryExtraDemoDatepickerForm extends sfJQueryExtraBaseForm
     $this->setWidget('intl',new sfJQueryExtraWidgetDate(array(
         'culture' => '',
     )));
-    $this->setValidator('intl', new sfValidatorDate());
+    $this->setValidator('intl', new sfValidatorDate(array(
+        'required' => false,
+    )));
 
     $this->setWidget('fr',new sfJQueryExtraWidgetDate(array(
         'culture' => 'fr',
     )));
-    $this->setValidator('fr', new sfValidatorDate());
+    $this->setValidator('fr', new sfValidatorDate(array(
+        'required' => false,
+    )));
 
     $this->setWidget('ar',new sfJQueryExtraWidgetDate(array(
         'culture' => 'ar',
     )));
-    $this->setValidator('ar', new sfValidatorDate());
+    $this->setValidator('ar', new sfValidatorDate(array(
+        'required' => false,
+    )));
 
     $this->setWidget('with_max_date',new sfJQueryExtraWidgetDate(array(
         'culture' => 'uk',
@@ -26,7 +32,9 @@ class sfJQueryExtraDemoDatepickerForm extends sfJQueryExtraBaseForm
           'showButtonPanel' => 'true'
         ),
     )));
-    $this->setValidator('with_max_date', new sfValidatorDate());
+    $this->setValidator('with_max_date', new sfValidatorDate(array(
+        'required' => false,
+    )));
 
     $this->widgetSchema->setNameFormat('datepicker[%s]');
   }
