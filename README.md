@@ -74,4 +74,4 @@ all:
 ## Documentation & Support
 
 * No documentation yet (a good code don't need a documentation, that's it)
-* Support requests and bug reports can be posted to the [Issue Tracker](https://github.com/blueimp/jQuery-File-Upload/issues).
+* Support requests and bug reports can be posted to the [Issue Tracker](https://github.com/ClementGautier/sfJQueryExtraFormPlugin/issues).
