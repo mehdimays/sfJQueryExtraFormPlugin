@@ -1,6 +1,6 @@
 <?php
 
-class sfJQueryExtraDemoAutoCompleteForm extends BaseForm
+class sfJQueryExtraDemoAutoCompleteForm extends sfJQueryExtraBaseForm
 {
   public function configure()
   {
