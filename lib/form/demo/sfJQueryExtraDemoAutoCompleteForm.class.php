@@ -4,7 +4,7 @@ class sfJQueryExtraDemoAutoCompleteForm extends BaseForm
 {
   public function configure()
   {
-    $this->widgetSchema['autocomplete'] = new sfJQueryExtraWidgetInputText(array(
+    $this->widgetSchema['simple-autocomplete'] = new sfJQueryExtraWidgetInputText(array(
       'autocomplete' => array(
         'source' => array(
           "ActionScript",
@@ -32,5 +32,15 @@ class sfJQueryExtraDemoAutoCompleteForm extends BaseForm
         )
       )
     ));
+
+    sfContext::getInstance()->getConfiguration()->loadHelpers('Url');
+
+    $this->widgetSchema['remote-autocomplete'] = new sfJQueryExtraWidgetInputText(array(
+      'autocomplete' => array(
+        'source'      => url_for('sfJQueryExtraFormDemo/remoteAutocomplete'),
+        'minLength'   => 2,
+      )
+    ));
+
   }
 }
