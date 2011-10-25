@@ -1,0 +1,3 @@
+[submodule "lib/vendor/jquery.html5"]
+	path = lib/vendor/jquery.html5
+	url = git://github.com/ClementGautier/jquery.html5.git
