@@ -5,18 +5,24 @@ class sfJQueryExtraWidgetInputText extends sfWidgetFormInputText
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-
-    $this->setOption('type', 'text');
+    $this->addOption('source', array());
   }
 
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    sfContext::getInstance()->getConfiguration()->loadHelpers('JavascriptBase');
-
-    $attributes = $this->fixFormId(array_merge(array('type' => $this->getOption('type'), 'name' => $name, 'value' => $value), $attributes));
+    $attributes = array_merge(array(
+      'data-sfautocomplete' => json_encode(array(
+        'source' => $this->getOption('source')
+      ))
+    ), $attributes);
     
-    $js = '$(function (){ $("#'.$attributes['id'].'").autocomplete(); });';
-
-    return parent::render($name, $value, $attributes, $errors)."\n".javascript_tag($js);
+    return parent::render($name, $value, $attributes, $errors);
+  }
+  
+  public function getJavascripts()
+  {
+    return array_merge(array(
+      '/sfJQueryExtraFormPlugin/js/bootstrap.autocomplete.js',
+    ), parent::getJavascripts());
   }
 }
