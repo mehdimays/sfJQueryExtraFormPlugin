@@ -12,6 +12,7 @@ class sfJQueryExtraBaseForm extends BaseForm
   public function getJavascripts()
   {
     return array_merge(array(
+      '/sfJQueryExtraFormPlugin/js/main.js',
       '/sfJQueryExtraFormPlugin/js/jquery.html5.js',
     ), parent::getJavascripts());
   }
