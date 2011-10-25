@@ -1,0 +1,9 @@
+sfJQueryExtraFormFile:
+  actAs: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    src:
+      type: string(255)
+      notnull: true
