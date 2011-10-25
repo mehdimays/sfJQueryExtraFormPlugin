@@ -10,4 +10,10 @@ class sfJQueryExtraFormDemoActions extends sfActions
   {
     $this->form = new sfJQueryExtraDemoAutoCompleteForm();
   }
+
+  public function executeDatepicker(sfWebRequest $request)
+  {
+
+    $this->form = new sfJQueryExtraDemoDatepickerForm();
+  }
 }
